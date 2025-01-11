@@ -92,11 +92,11 @@ const SocialLinks = () => {
   return (
     <div className="flex gap-4">
       <FaFacebook
-        className="text-white text-2xl hover:text-primary transition duration-300 cursor-pointer"
+        className="text-white text-2xl hover:text-mainTurquoise transition duration-300 cursor-pointer"
         onClick={() => openFacebookPage()}
       />
       <AiFillInstagram
-        className="text-white text-2xl hover:text-primary transition duration-300 cursor-pointer"
+        className="text-white text-2xl hover:text-mainTurquoise transition duration-300 cursor-pointer"
         onClick={() => openInstagramPage()}
       />
     </div>

@@ -4,15 +4,6 @@ export const aboutUsPageCopy = {
   body: "At Marquista, we thrive at the crossroads of creativity and strategy. Based in Egypt, we’re a production house that dares to dream big—crafting content that not only resonates with audiences today but stands the test of time. Whether you’re looking to dominate social media, captivate with a music video, or craft a memorable TV commercial, we’re here to make it happen.",
 };
 
-export const whatWeDoCopy = {
-  heading: "See it to Believe it",
-  movieMagic: {
-    title: "From Vision to Magic",
-    description:
-      "Every production starts with a vision—but it’s the magic we bring that transforms it into something extraordinary. From concept development to on-set creativity and post-production finesse, we infuse every step with artistry and expertise. Whether it’s refining the smallest details or adding bold, cinematic flair, our process ensures your story doesn’t just come to life—it captivates, inspires, and stays with your audience long after the final frame.",
-  },
-};
-
 export const mainPageCopy = {
   heading: "Behind the Lens",
 };

@@ -1,4 +1,4 @@
-import { whatWeDoCopy } from "@/utils/copy";
+import { whatWeDoCopy } from "@/utils/copy/what-we-do";
 
 export const WhatWeDoHeading = () => {
   return (
