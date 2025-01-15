@@ -1,9 +1,34 @@
 import type { Metadata } from "next";
-import { Lora } from "next/font/google";
+// import { Lora } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar/Navbar";
+import localFont from "next/font/local";
 
-const lora = Lora({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
+// const lora = Lora({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
+const helvetica = localFont({
+  src: [
+    {
+      path: "./helvetica/Helvetica.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./helvetica/Helvetica-Bold.ttf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./helvetica/helvetica-light.ttf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./helvetica/Helvetica-Oblique.ttf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+});
 
 export const metadata: Metadata = {
   title: "Marquista",
@@ -17,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${lora.className} bg-black overflow-x-hidden`}>
+      <body className={`${helvetica.className} bg-black overflow-x-hidden`}>
         <Navbar />
         {children}
       </body>

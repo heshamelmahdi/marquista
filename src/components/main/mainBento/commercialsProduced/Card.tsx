@@ -5,8 +5,8 @@ import { useState } from "react";
 const Card = ({ image, index }: { image: string; index: number }) => {
   const [isHovered, setIsHovered] = useState(false);
 
-  const xTransform = index * 120 + 30;
-  const rotation = index * 5 + 10;
+  const xTransform = index * 80;
+  const rotation = index * 5 + 20;
 
   return (
     <div

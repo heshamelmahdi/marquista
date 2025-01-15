@@ -13,7 +13,7 @@ export const whatWeDoCopy = {
   ourExpertise: {
     title: "Why Work With Us",
     description:
-      "Choosing the right production partner can make all the difference, and at Marquista, we bring more than just skill—we bring dedication, creativity, and results. Our team of seasoned professionals combines years of experience with fresh, innovative thinking to deliver projects that stand out. We approach every project with a deep commitment to understanding your vision, ensuring it’s not just met but exceeded. Whether it’s a tight deadline or a bold creative challenge, we pride ourselves on being the team you can trust to deliver exceptional quality, on time, every time. With us, it’s not just about creating content; it’s about creating impact.",
+      "At Marquista, we bring dedication, creativity, and results to every project. Combining experience with fresh ideas, we ensure your vision is not just met but exceeded. From tight deadlines to bold challenges, we deliver exceptional quality that creates impact.",
   },
 };
 

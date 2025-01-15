@@ -16,7 +16,7 @@ const OurExpertise = () => {
           description={whatWeDoCopy.ourExpertise.description}
         />
       </div>
-      <div className="col-span-2 w-full h-full flex justify-center items-center">
+      <div className="col-span-2 w-full h-full flex justify-center items-start">
         <RevealCards />
       </div>
     </div>
@@ -25,7 +25,7 @@ const OurExpertise = () => {
 
 const RevealCards = () => {
   return (
-    <div className="my-10 flex flex-col lg:flex-row items-center justify-center gap-4">
+    <div className="flex flex-col lg:flex-row items-center justify-center gap-4">
       {ourExpertise.map((step) => (
         <Card
           title={step.subTitle}

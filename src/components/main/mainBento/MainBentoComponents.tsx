@@ -2,12 +2,13 @@ import { FaWhatsapp, FaWhatsappSquare } from "react-icons/fa";
 import { mainBentoGridCopy } from "@/utils/copy";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
-import Deck from "./contentCreated/CardStack";
+// import Deck from "./contentCreated/CardStack";
 import styles from "./contentCreated/deck.module.css";
 import CardSpread from "./commercialsProduced/CardSpread";
 import Image from "next/image";
 import InvertItButton from "@/components/ui/buttons/invert-it";
 import { openWhatsAppChat } from "@/utils/socialActions";
+import Deck from "./contentCreated/CardStackNew";
 
 const CountUpComponent = ({
   count,
@@ -56,7 +57,7 @@ const ContentCreationHeader = () => {
 
   return (
     <div ref={ref} className={styles.container}>
-      {inView && <Deck cardList={cardArray} verticalDrag={true} />}
+      {inView && <Deck cardList={cardArray} />}
     </div>
   );
 };

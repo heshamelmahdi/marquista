@@ -12,7 +12,7 @@ export function MovieMagic() {
             secondImage="https://assets.aceternity.com/code-solution.png"
             firstImageClassName="object-cover object-left-top"
             secondImageClassname="object-cover object-left-top"
-            className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
+            className="h-[250px] w-[200px] md:h-[380px] md:w-[380px]"
             slideMode="hover"
           />
         </div>
@@ -24,7 +24,7 @@ export function MovieMagic() {
             secondImage="https://assets.aceternity.com/code-solution.png"
             firstImageClassName="object-cover object-left-top"
             secondImageClassname="object-cover object-left-top"
-            className="h-[250px] w-[200px] md:h-[500px] md:w-[500px]"
+            className="h-[250px] w-[200px] md:h-[380px] md:w-[380px]"
             slideMode="hover"
           />
         </div>

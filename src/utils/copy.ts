@@ -34,27 +34,27 @@ export const mainBentoGridCopy = {
   // Header Text
   headerTitle: "At a Glance",
   headerParagraph:
-    "At Marquista, we’re more than just a production house—we’re storytellers, visionaries, and creators. Based in Egypt but reaching audiences worldwide, we specialize in crafting compelling visuals that inspire, captivate, and engage. Whether it’s a scroll-stopping social media campaign, a high-impact TV commercial, or a cinematic music video, we bring ideas to life with passion, precision, and purpose. Our team of experts thrives on collaboration, working closely with clients to ensure every project reflects their unique vision. From concept to completion, we don’t just create content—we create experiences that resonate.",
+    "At Marquista, we craft visuals that captivate and inspire. From social media campaigns to commercials and music videos, we bring ideas to life with passion, precision, and a global reach.",
 };
 
 export const mainTeamCopy = {
   header: "Get to Know Us",
   description:
-    "Founded in 2022 by Ahmed El-Mahdi and Rawan El Badry, our journey began with a shared passion for storytelling and visual creativity. What started as a dream between two visionaries quickly evolved into a thriving production agency fueled by a talented and dedicated team. From the very beginning, we’ve been committed to pushing boundaries, crafting content that not only looks stunning but also connects with audiences on a deeper level. Today, we’re proud to collaborate with brands and creators across industries, bringing bold ideas to life with the same enthusiasm that sparked our start.",
+    "Founded in 2022 by Ahmed El-Mahdi and Rawan El Badry, we began with a passion for storytelling and visual creativity. Today, we’re a thriving agency, crafting bold, impactful content and collaborating with brands across industries.",
   testimonials: [
     {
       quote:
-        "A visionary serial entrepreneur who founded his first company in 2020, Ahmed brings strategic foresight and creative leadership to every project, drawing from his diverse experience across multiple sectors.",
-      name: "Ahmed El-Mahdi",
-      designation: "Co-Founder & CEO",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "With a vibrant personality and an unstoppable work ethic, Rawan lights up the team with her energy and dedication, ensuring every idea is executed with passion and flair.",
+        "Rawan's dynamic leadership and relentless dedication inspire the team, transforming ideas into extraordinary results",
       name: "Rawan El Badry",
       designation: "Co-Founder & Creative Director",
       src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "A visionary entrepreneur, Ahmed founded his first company in 2020 and brings strategic foresight and creative leadership to every project.",
+      name: "Ahmed El-Mahdi",
+      designation: "Co-Founder & CEO",
+      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     },
     {
       quote:

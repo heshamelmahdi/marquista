@@ -28,7 +28,7 @@ const TheTeam = () => {
   return (
     <section
       id="the-team"
-      className="flex flex-col z-50 w-screen pt-10 items-center gap-8"
+      className="flex flex-col z-50 w-screen items-center gap-5"
     >
       {/* <SectionHeader
         topLine={theTeamHeader.topLine}
@@ -37,6 +37,7 @@ const TheTeam = () => {
         line2={theTeamHeader.line2}
         className="text-white"
       /> */}
+      <h1 className="text-primary text-4xl font-bold">Meet the Team</h1>
       <div className="hidden md:grid md:grid-cols-2 gap-2 xl:flex xl:flex-row w-fit">
         {teamMembers.map((member, index) => (
           <TeamMemberCard
