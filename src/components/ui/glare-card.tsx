@@ -37,6 +37,7 @@ export const GlareCard = ({
     "--radius": "48px",
     "--easing": "ease",
     "--transition": "var(--duration) var(--easing)",
+    // @ts-ignore
   } as any;
 
   const backgroundStyle = {

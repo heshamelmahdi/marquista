@@ -4,13 +4,7 @@ import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import { PastProjectsTitle } from "./PastProjectsText";
 
-export const VideoComponent = ({
-  src,
-  text,
-}: {
-  src: string;
-  text: string;
-}) => {
+export const VideoComponent = ({ src }: { src: string }) => {
   return (
     <div className="flex-100 md:flex-70 lg:flex-50 2xl:flex-33 3xl:flex-25 relative h-screen overflow-clip ">
       <video
@@ -39,9 +33,7 @@ export const PastProjectsContent = () => {
 
   const options = { loop: true, watchDrag: false };
 
-  const [carouselRef, api] = useEmblaCarousel(options, [
-    Autoplay({ delay: 5000 }),
-  ]);
+  const [carouselRef] = useEmblaCarousel(options, [Autoplay({ delay: 5000 })]);
 
   return (
     <section className="m-auto !overflow-hidden">

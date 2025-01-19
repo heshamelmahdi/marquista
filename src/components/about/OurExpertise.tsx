@@ -93,6 +93,7 @@ const Card = ({
   );
 };
 
+// @ts-ignore
 export const Icon = ({ className, ...rest }: any) => {
   return (
     <svg

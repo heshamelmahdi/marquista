@@ -1,6 +1,5 @@
 import { companyLogos } from "@/utils/content/company-logos";
 import { InfiniteMovingCards } from "../../ui/clients-infinite-moving-cards";
-import { items } from "../mainBento/MainBentoComponents";
 
 const ClientsSlider = () => {
   return (

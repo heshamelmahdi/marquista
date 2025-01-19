@@ -33,7 +33,7 @@ const ProjectsParallax = () => {
     }
   }, [width]);
 
-  const y1 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
+  // const y1 = useTransform(scrollYProgress, [0, 1], [0, height * 2]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
@@ -41,7 +41,7 @@ const ProjectsParallax = () => {
   useEffect(() => {
     const lenis = new Lenis();
 
-    // @ts-ignore
+    // @ts-expect-error
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);

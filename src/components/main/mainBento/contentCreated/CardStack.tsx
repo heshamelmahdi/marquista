@@ -34,7 +34,7 @@ const to = (i: number, random: () => number) => ({
   delay: i * 100,
 });
 
-const from = (_i: number) => ({ x: -2000, rot: 0, scale: 1.5, y: 0 });
+const from = () => ({ x: -2000, rot: 0, scale: 1.5, y: 0 });
 
 const trans = (r: number, s: number) =>
   `perspective(1500px) rotateX(30deg) rotateY(${
@@ -46,7 +46,7 @@ const Deck = ({ cardList = defaultCards }: DeckProps) => {
   const random = seededRandom(42);
   const [props, api] = useSprings(cardList.length, (i) => ({
     ...to(i, random),
-    from: from(i),
+    from: from(),
   }));
 
   useEffect(() => {
@@ -88,10 +88,10 @@ const Deck = ({ cardList = defaultCards }: DeckProps) => {
   return (
     <>
       {props.map(({ x, y, rot, scale }, i) => (
-        // @ts-ignore
+        // @ts-expect-error
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
           {/* Card */}
-          {/* @ts-ignore */}
+          {/* @ts-expect-error */}
           <animated.div
             style={{
               transform: interpolate([rot, scale], trans),

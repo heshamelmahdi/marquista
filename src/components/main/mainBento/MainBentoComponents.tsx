@@ -1,4 +1,4 @@
-import { FaWhatsapp, FaWhatsappSquare } from "react-icons/fa";
+import { FaWhatsappSquare } from "react-icons/fa";
 import { mainBentoGridCopy } from "@/utils/copy";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";

@@ -84,9 +84,6 @@ const DropdownMenuItem = React.forwardRef<
     inset?: boolean;
   }
 >(({ className, inset, ...props }, ref) => {
-  const dropdownMenuRef = React.useRef<
-    typeof DropdownMenuPrimitive.Root | null
-  >(null);
   return (
     <DropdownMenuPrimitive.Item
       ref={ref}

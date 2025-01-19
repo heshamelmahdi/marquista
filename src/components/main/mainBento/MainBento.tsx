@@ -28,8 +28,9 @@ export function MainBento() {
                 header={item.header}
                 className={item.className}
                 icon={item.icon}
-                children={item.children}
-              />
+              >
+                {item.children}
+              </BentoGridItem>
             );
           } else {
             if (i != 3) {
@@ -41,8 +42,9 @@ export function MainBento() {
                   header={item.header}
                   className={item.className}
                   icon={item.icon}
-                  children={item.children}
-                />
+                >
+                  {item.children}
+                </BentoGridItem>
               );
             }
           }

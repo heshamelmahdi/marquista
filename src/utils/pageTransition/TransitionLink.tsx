@@ -1,7 +1,7 @@
 "use client";
 
 import Link, { LinkProps } from "next/link";
-import { MouseEvent, ReactNode } from "react";
+import { ReactNode } from "react";
 import { useRouter } from "next/navigation";
 
 interface TransitionLinkProps extends LinkProps {
