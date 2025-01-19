@@ -5,9 +5,9 @@ import {
   openFacebookPage,
   openInstagramPage,
   openWhatsAppChat,
-} from "@/utils/socialActions";
-import ContactForm from "@/components/contact/ContactForm";
-import LiftUpBorders from "@/components/ui/buttons/lift-up-borders";
+} from "../../utils/socialActions";
+import ContactForm from "../../components/contact/ContactForm";
+import LiftUpBorders from "../../components/ui/buttons/lift-up-borders";
 
 const Contact = () => {
   const contClassName = "flex gap-2 items-center justify-center";

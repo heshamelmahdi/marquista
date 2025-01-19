@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
 
 const helvetica = localFont({
   src: [
