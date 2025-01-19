@@ -47,28 +47,21 @@ export const mainTeamCopy = {
         "Rawan's dynamic leadership and relentless dedication inspire the team, transforming ideas into extraordinary results",
       name: "Rawan El Badry",
       designation: "Co-Founder & Creative Director",
-      src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "https://storage.googleapis.com/bts-photos/rawan.png",
     },
     {
       quote:
         "A visionary entrepreneur, Ahmed founded his first company in 2020 and brings strategic foresight and creative leadership to every project.",
       name: "Ahmed El-Mahdi",
       designation: "Co-Founder & CEO",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "https://storage.googleapis.com/bts-photos/ahmed.png",
     },
     {
       quote:
         "A seasoned videographer and the best DOP in the business, Omar has been crafting stunning visuals since 2018, lending his expertise to high-scale commercials and TV productions.",
-      name: "Omar",
+      name: "Marwan Nabil",
       designation: "Director of Photography",
-      src: "https://images.unsplash.com/photo-1623582854588-d60de57fa33f?q=80&w=3540&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "The mastermind behind impactful campaigns, Sara is a skilled marketeer, media buyer, and social media specialist who knows how to connect brands with their audiences effectively.",
-      name: "Sara",
-      designation: "Head of Marketing",
-      src: "https://images.unsplash.com/photo-1636041293178-808a6762ab39?q=80&w=3464&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      src: "https://storage.googleapis.com/bts-photos/marwan.png",
     },
   ],
 };

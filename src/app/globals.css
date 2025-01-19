@@ -61,7 +61,21 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground overflow-x-hidden;
+  }
+  .btn,
+  .input {
+    @apply h-[52px];
+  }
+  .input {
+    @apply w-full h-[52px] rounded-lg pl-6;
+  }
+  .input,
+  .textarea {
+    @apply bg-transparent outline-none focus:ring-1 focus:ring-accent border border-white placeholder:text-white/50 placeholder:font-light text-white;
+  }
+  .textarea {
+    @apply w-full h-[180px] p-6 rounded-lg resize-none;
   }
 }
 
@@ -76,4 +90,26 @@
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
+}
+
+body {
+  transition-property: opacity, transform, filter, background;
+  transition-timing-function: ease-in-out;
+  transition-duration: 500ms;
+}
+
+.page-transition {
+  opacity: 0;
+  background: black;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
+.navbar {
+  transition-duration: 0ms;
+}
+
+.nav-transition {
+  opacity: 0;
+  pointer-events: none;
 }

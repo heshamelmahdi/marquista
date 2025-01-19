@@ -41,11 +41,13 @@ const ContactUs = () => {
   return (
     <section
       id="contact-us"
-      className="flex flex-col z-50 bg-black pt-20 items-center gap-8"
+      className="flex flex-col z-50 bg-black  items-center gap-4"
     >
-      <h1 className="text-3xl md:text-5xl text-mainTurquoise">Contact Us</h1>
+      <h1 className="text-3xl md:text-5xl text-mainTurquoise font-bold tracking-tighter">
+        Contact Us
+      </h1>
       {/* Buttons */}
-      <div className="flex flex-col md:flex-row gap-2 mb-10">
+      <div className="flex flex-col md:flex-row gap-2">
         {contacts.map((cont, idx) => (
           <LiftUpButton key={idx} text={cont.text} onClick={cont.link} />
         ))}

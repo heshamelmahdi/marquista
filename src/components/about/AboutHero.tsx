@@ -1,14 +1,18 @@
 import Image from "next/image";
-import { AboutTextHeading } from "./AboutText";
+import { PageHeader } from "../reusable/PageHeader";
+import { aboutUsPageCopy } from "@/utils/copy";
+import { getTwoRandomVideos } from "@/utils/content/final-videos";
 
 const AboutHero = () => {
+  const videos = getTwoRandomVideos();
+
   return (
     <div className="inline-block lg:h-[50vh] max-w-fit relative">
       <div className="absolute top-0 left-0 bg-black/50 w-[500%] h-full z-[100]"></div>
 
       <div className="inline-flex items-center justify-center gap-2 h-full max-w-fit">
         <video
-          src="/videos/batates2.mov"
+          src={videos[0]}
           autoPlay
           loop
           muted
@@ -24,10 +28,10 @@ const AboutHero = () => {
             height={1707}
             className="h-full object-cover rounded-lg z-[50] grayscale"
           />
-          <AboutTextHeading />
+          <PageHeader text={aboutUsPageCopy.heading} />
         </div>
         <video
-          src="/videos/donuts1.mov"
+          src={videos[1]}
           autoPlay
           loop
           muted

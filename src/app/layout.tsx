@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-// import { Lora } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
 import localFont from "next/font/local";
+import Navbar from "@/components/navbar/Navbar";
 
-// const lora = Lora({ weight: ["400", "500", "600", "700"], subsets: ["latin"] });
 const helvetica = localFont({
   src: [
     {

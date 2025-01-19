@@ -1,14 +1,14 @@
 export const whatWeDoCopy = {
   heading: "See it to Believe it",
   ourServices: {
-    title: "Our Services at a Glance",
+    title: "At a Glance",
     description:
-      "From the first spark of an idea to the final cut, we offer a full spectrum of services tailored to bring your vision to life. Our expertise spans pre-production planning, where concepts are carefully crafted and logistics fall into place, to on-set production, where every frame is captured with precision and creativity. Post-production is where the magic unfolds—editing, color grading, sound design, and more come together to create a polished masterpiece. Beyond production, we specialize in social media strategy and campaign management, ensuring your content doesn’t just exist—it thrives. Whatever your project demands, we have the tools, talent, and passion to deliver.",
+      "From concept to final cut, we handle it all—planning, production, post-production, and social media strategy. With talent and passion, we bring your vision to life.",
   },
   movieMagic: {
     title: "From Vision to Magic",
     description:
-      "Every production starts with a vision—but it’s the magic we bring that transforms it into something extraordinary. From concept development to on-set creativity and post-production finesse, we infuse every step with artistry and expertise. Whether it’s refining the smallest details or adding bold, cinematic flair, our process ensures your story doesn’t just come to life—it captivates, inspires, and stays with your audience long after the final frame.",
+      "Every production begins with a vision, but our magic transforms it into something extraordinary. From concept to post-production, we craft stories that captivate, inspire, and leave a lasting impact.",
   },
   ourExpertise: {
     title: "Why Work With Us",
@@ -42,7 +42,7 @@ export const ourServices = [
   },
   {
     id: 4,
-    title: "Deployment Strategy",
+    title: "Strategy",
     description: "Turning content into campaigns that connect and convert.",
     image: "/deployment-strategies.jpg",
   },

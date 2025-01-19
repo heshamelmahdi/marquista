@@ -14,9 +14,9 @@ const ServiceCardHovered = ({
   image: string;
 }) => {
   return (
-    <div className="flex flex-col p-10 justify-between w-full h-full gap-3">
-      <div className="flex items-end gap-5">
-        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start hidden h-full w-fit">
+    <div className="flex flex-col p-10 justify-between w-full h-full md:gap-3">
+      <div className="hidden md:flex items-end gap-5">
+        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start  h-full w-fit">
           {description}
         </p>
         <GlareCard className="">
@@ -29,10 +29,24 @@ const ServiceCardHovered = ({
           />
         </GlareCard>
       </div>
+      <div className="flex flex-col md:hidden items-end gap-5">
+        <GlareCard className="">
+          <Image
+            className="object-cover grayscale"
+            src={image}
+            alt={description}
+            width={2000}
+            height={1000}
+          />
+        </GlareCard>
+        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start  h-full w-fit">
+          {description}
+        </p>
+      </div>
       <div className="flex flex-col justify-between w-full">
         <h1
           className={cn(
-            "flex items-end justify-start text-4xl font-extrabold text-justify tracking-tighter w-fit text-black",
+            "flex justify-start text-2xl md:text-4xl font-extrabold tracking-tighter w-full text-center text-black",
             titleClassName
           )}
         >

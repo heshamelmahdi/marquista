@@ -7,6 +7,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { navItems } from "./Navbar";
+import TransitionLink from "@/utils/pageTransition/TransitionLink";
 
 const HamburgerNavbar = () => {
   return (
@@ -15,14 +16,16 @@ const HamburgerNavbar = () => {
         <RxHamburgerMenu className="w-8 h-8 text-white" />
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        className=" bg-background text-white backdrop-blur-md font-bold border-none"
+        className=" bg-background text-white backdrop-blur-md font-bold border-none z-[99999999]"
         align="end"
       >
         {navItems.map((element, index) => (
           <div key={index}>
             {index !== 0 && <DropdownMenuSeparator />}
             <DropdownMenuItem key={index}>
-              <a href={element.link}>{element.title}</a>
+              <TransitionLink href={element.link} className="text-black">
+                {element.title}
+              </TransitionLink>
             </DropdownMenuItem>
           </div>
         ))}

@@ -1,337 +1,83 @@
 "use client";
 
-import Image from "next/image";
-import {
-  RenderImageContext,
-  RenderImageProps,
-  RowsPhotoAlbum,
-} from "react-photo-album";
+import { useState } from "react";
+import { ColumnsPhotoAlbum } from "react-photo-album";
 import "react-photo-album/rows.css";
-
-function renderNextImage(
-  { alt = "", title, sizes }: RenderImageProps,
-  { photo, width, height }: RenderImageContext
-) {
-  return (
-    <div
-      style={{
-        width: "100%",
-        position: "relative",
-        aspectRatio: `${width} / ${height}`,
-      }}
-    >
-      <Image
-        fill
-        src={photo}
-        alt={alt}
-        title={title}
-        sizes={sizes}
-        placeholder={"blurDataURL" in photo ? "blur" : undefined}
-      />
-    </div>
-  );
-}
+import "react-photo-album/columns.css";
+import { photos } from "@/utils/content/bts-photos";
+import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 
 const PhotoGallery = () => {
-  const photos = [
-    {
-      src: "https://storage.googleapis.com/bts-photos/1.JPG",
-      width: 1536,
-      height: 2730,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/11.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/12.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/13.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/14.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/15.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    {
-      src: "https://storage.googleapis.com/bts-photos/16.JPG",
-      width: 1536,
-      height: 2048,
-    },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/17.JPG",
-    //   width: 1125,
-    //   height: 792,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/18.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/19.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/20.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/21.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/22.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/23.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/24.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/25.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/26.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/27.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/28.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/29.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/30.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/31.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/32.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/33.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/34.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/35.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/36.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/37.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/38.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/39.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/40.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/41.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/42.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/43.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/44.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/45.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/46.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/47.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/48.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/49.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/50.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/51.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/52.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/53.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/54.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/55.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/56.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/57.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/58.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/59.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/60.JPG",
-    //   width: 1536,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/61.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/62.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/63.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/64.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/65.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-    // {
-    //   src: "https://storage.googleapis.com/bts-photos/66.JPG",
-    //   width: 2048,
-    //   height: 2048,
-    // },
-  ];
+  // Pagination setup
+  const photosPerPage = 20;
+  const [currentPage, setCurrentPage] = useState(1);
+
+  // Calculate the total number of pages
+  const totalPages = Math.ceil(photos.length / photosPerPage);
+
+  // Get the photos for the current page
+  const paginatedPhotos = photos.slice(
+    (currentPage - 1) * photosPerPage,
+    currentPage * photosPerPage
+  );
+
+  // Function to handle page change
+  const handlePageChange = (pageNumber: number) => {
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="w-full h-full flex flex-col items-center gap-5">
-      <h1 className="text-primary text-4xl font-bold">
+      <h1 className="text-primary text-4xl font-bold tracking-tighter">
         Get a Glimpse Behind the Scenes
       </h1>
-      <RowsPhotoAlbum
-        photos={photos}
-        render={{ image: renderNextImage }}
+      <ColumnsPhotoAlbum
+        photos={paginatedPhotos}
         padding={10}
-        componentsProps={{ wrapper: { className: "bg-white rounded-lg" } }}
+        componentsProps={{
+          wrapper: { className: "bg-white rounded-lg " },
+          image: { className: "rounded-lg " },
+        }}
+        breakpoints={[500, 900, 1200, 1500]}
+        columns={(width) => {
+          if (width < 500) return 2; // 1 column for small screens
+          if (width < 900) return 3; // 2 columns for medium screens
+          if (width < 1200) return 4; // 3 columns for large screens
+          if (width < 1500) return 5; // 3 columns for large screens
+          return 6;
+        }}
       />
+
+      {/* Pagination Controls */}
+      <div className="flex gap-2 mt-5">
+        <button
+          className="px-4 py-2 text-white bg-primary rounded disabled:opacity-50"
+          disabled={currentPage === 1}
+          onClick={() => handlePageChange(currentPage - 1)}
+        >
+          <IconArrowLeft className="h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300" />
+        </button>
+        {[...Array(totalPages)].map((_, index) => (
+          <button
+            key={index}
+            className={`hidden md:block px-4 py-2 rounded ${
+              currentPage === index + 1
+                ? "bg-primary text-white"
+                : "bg-gray-200 text-gray-700"
+            }`}
+            onClick={() => handlePageChange(index + 1)}
+          >
+            {index + 1}
+          </button>
+        ))}
+        <button
+          className="px-4 py-2 text-white bg-primary rounded disabled:opacity-50"
+          disabled={currentPage === totalPages}
+          onClick={() => handlePageChange(currentPage + 1)}
+        >
+          <IconArrowRight className="h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300" />
+        </button>
+      </div>
     </div>
   );
 };

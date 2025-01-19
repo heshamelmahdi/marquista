@@ -22,9 +22,9 @@ export const VideoComponent = ({
         disablePictureInPicture
         className="object-contain"
       />
-      <div className="z-[200] absolute right-0 top-0 min-[1822px]:h-screen h-full hidden md:flex justify-center items-center min-[1822px]:text-4xl text-3xl uppercase text-white vertical-text w-10 bg-black/50">
+      {/* <div className="z-[200] absolute right-0 top-0 min-[1822px]:h-screen h-full hidden md:flex justify-center items-center min-[1822px]:text-4xl text-3xl uppercase text-white vertical-text w-10 bg-black/50">
         {text}
-      </div>
+      </div> */}
     </div>
   );
 };

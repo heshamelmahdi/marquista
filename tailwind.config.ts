@@ -44,7 +44,7 @@ export default {
           "0 12.5px 100px -10px rgba(50, 50, 73, 0.4), 0 10px 10px -10px rgba(50, 50, 73, 0.3)",
       },
       colors: {
-        mainTurquoise: "#00c2c2",
+        mainTurquoise: "#3eb571",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         card: {
@@ -56,7 +56,7 @@ export default {
           foreground: "hsl(var(--popover-foreground))",
         },
         primary: {
-          DEFAULT: "#00c2c2",
+          DEFAULT: "#3eb571",
           foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {

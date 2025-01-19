@@ -1,7 +1,7 @@
 export const openWhatsAppChat = () => {
-  const phoneNumber = "201119926330";
+  const phoneNumber = "201000060407";
   const message =
-    "Hi, I am interested in your event management services! I am looking for...";
+    "Hi, I am interested in your production services! I am looking for...";
 
   const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
     message
@@ -10,7 +10,7 @@ export const openWhatsAppChat = () => {
 };
 
 export const openInstagramPage = () => {
-  const instagramUsername = "eventale.co";
+  const instagramUsername = "marquistaa";
 
   // Instagram URL scheme for mobile
   const mobileUrl = `instagram://user?username=${instagramUsername}`;
@@ -30,7 +30,7 @@ export const openInstagramPage = () => {
 };
 
 export const openFacebookPage = () => {
-  const facebookUsername = "profile.php?id=61562400577901";
+  const facebookUsername = "profile.php?id=61563413473239";
 
   // Facebook URL scheme for mobile
   const mobileUrl = `fb://profile/${facebookUsername}`;

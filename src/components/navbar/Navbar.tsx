@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { staggerUp } from "@/lib/motion";
 import HamburgerNavbar from "./HamburgerNavbar";
+import TransitionLink from "@/utils/pageTransition/TransitionLink";
 
 export const navItems = [
   {
@@ -16,7 +17,7 @@ export const navItems = [
     link: "/what-we-do",
   },
   {
-    title: "Past Projects",
+    title: "Latest Projects",
     link: "/past-projects",
   },
   {
@@ -26,9 +27,9 @@ export const navItems = [
 ];
 const Navbar = () => {
   return (
-    <nav className="w-full fixed top-0 z-[300] h-[65px] p-8 overflow-hidden flex items-center">
+    <nav className="w-full fixed top-0 z-[300] h-[65px] p-8 overflow-hidden flex items-center navbar">
       <div className="flex justify-between items-center w-full">
-        <Link href={"/"}>
+        <TransitionLink href={"/"}>
           <Image
             src="/logo.png"
             alt="Marquista Logo"
@@ -36,7 +37,7 @@ const Navbar = () => {
             height={44}
             className="object-cover w-[110] h-[22px] "
           />
-        </Link>
+        </TransitionLink>
 
         {/* Laptop */}
         <motion.div
@@ -47,13 +48,13 @@ const Navbar = () => {
           custom={0.1}
         >
           {navItems.map((item, index) => (
-            <Link
+            <TransitionLink
               key={index}
               href={item.link}
               className="text-sm font-thin cursor-pointer hover:text-pop transition-all duration-300 z-50"
             >
               {item.title}
-            </Link>
+            </TransitionLink>
           ))}
         </motion.div>
 

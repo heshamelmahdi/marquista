@@ -2,13 +2,10 @@
 
 import React, { useEffect, useState } from "react";
 import { useSprings, animated, to as interpolate } from "@react-spring/web";
-import { useDrag } from "react-use-gesture";
 import styles from "./deck.module.css";
 
 interface DeckProps {
   cardList?: string[];
-  verticalDrag?: boolean;
-  horizontalDrag?: boolean;
 }
 
 const defaultCards = [
@@ -19,108 +16,89 @@ const defaultCards = [
   "https://upload.wikimedia.org/wikipedia/commons/d/de/RWS_Tarot_01_Magician.jpg",
 ];
 
-// These two are just helpers, they curate spring data, values that are later being interpolated into css
-const to = (i: number) => ({
+// Deterministic random number generator (PRNG)
+const seededRandom = (seed: number) => {
+  let value = seed;
+  return () => {
+    value = (value * 16807) % 2147483647;
+    return (value - 1) / 2147483646;
+  };
+};
+
+// Helpers for animation
+const to = (i: number, random: () => number) => ({
   x: 0,
   y: i * -4,
   scale: 1,
-  rot: -20 + Math.random() * 20,
+  rot: -20 + random() * 20,
   delay: i * 100,
 });
 
 const from = (_i: number) => ({ x: -2000, rot: 0, scale: 1.5, y: 0 });
-// This is being used down there in the view, it interpolates rotation and scale into a css transform
+
 const trans = (r: number, s: number) =>
   `perspective(1500px) rotateX(30deg) rotateY(${
     r / 10
   }deg) rotateZ(${r}deg) scale(${s})`;
 
-const Deck = ({
-  cardList = defaultCards,
-  verticalDrag = false,
-  horizontalDrag = true,
-}: DeckProps) => {
-  const [gone] = useState(() => new Set()); // The set flags all the cards that are flicked out
+const Deck = ({ cardList = defaultCards }: DeckProps) => {
+  const [gone] = useState(() => new Set<number>()); // Track flung cards
+  const random = seededRandom(42);
   const [props, api] = useSprings(cardList.length, (i) => ({
-    ...to(i),
+    ...to(i, random),
     from: from(i),
-  })); // Create a bunch of springs using the helpers above
-  // Create a gesture, we're interested in down-state, delta (current-pos - click-pos), direction and velocity
+  }));
 
   useEffect(() => {
-    api.start((i) => to(i));
+    api.start((i) => to(i, random));
   }, [api]);
 
-  const bind = useDrag(
-    ({
-      args: [index],
-      down,
-      movement: [mx, my],
-      direction: [xDir, yDir],
-      velocity,
-    }) => {
-      console.log("test velocity", velocity);
-      const trigger = velocity > 2.2; // If you flick hard enough it should trigger the card to fly out
-      const dirX = xDir < 0 ? -1 : 1; // Direction should either point left or right
-      const dirY = yDir < 0 ? -1 : 1; // Direction should either point up or down
+  const flingCard = (index: number) => {
+    gone.add(index); // Mark the card as "gone"
+    const dirX = random() > 0.5 ? 1 : -1; // Randomly fling left or right
+    const dirY = random() > 0.5 ? 1 : -1;
 
-      if (!down && trigger) gone.add(index); // If button/finger's up and trigger velocity is reached, we flag the card ready to fly out
+    api.start((i) => {
+      if (i !== index) return; // Only animate the clicked card
+      const isGone = gone.has(index);
+      const x = isGone ? (200 + window.innerWidth) * dirX : 0;
+      const y = isGone ? (200 + window.innerHeight) * dirY : 0;
+      const rot = isGone ? dirX * 10 + dirY * 10 : 0;
+      const scale = 1; // Keep the scale consistent
 
-      api.start((i) => {
-        if (index !== i) return; // We're only interested in changing spring-data for the current spring
-        const isGone = gone.has(index);
-        const x = horizontalDrag
-          ? isGone
-            ? (200 + window.innerWidth) * dirX
-            : down
-            ? mx
-            : 0
-          : 0; // When a card is gone it flys out left or right, otherwise goes back to zero
-        const y = verticalDrag
-          ? isGone
-            ? (200 + window.innerHeight) * dirY
-            : down
-            ? my
-            : 0
-          : 0; // When a card is gone it flys out up or down, otherwise goes back to zero
-        //   const y = 0 // When a card is gone it flys out up or down, otherwise goes back to zero
-        const rot =
-          mx / 100 +
-          my / 100 +
-          (isGone ? (dirX * 10 + dirY * 10) * velocity : 0); // How much the card tilts, flicking it harder makes it rotate faster
-        const scale = down ? 1.1 : 1; // Active cards lift up a bit
-        return {
-          x,
-          y,
-          rot,
-          scale,
-          delay: undefined,
-          config: { friction: 50, tension: down ? 800 : isGone ? 200 : 500 },
-        };
-      });
+      return {
+        x,
+        y,
+        rot,
+        scale,
+        delay: undefined,
+        config: { friction: 20, tension: 150 },
+      };
+    });
 
-      if (!down && gone.size === cardList.length) {
-        setTimeout(() => {
-          gone.clear();
-          api.start((i) => to(i));
-        }, 600);
-      }
+    // Reset the deck when all cards are gone
+    if (gone.size === cardList.length) {
+      setTimeout(() => {
+        gone.clear();
+        api.start((i) => to(i, random));
+      }, 600);
     }
-  );
-  // Now we're just mapping the animated values to our view, that's it. Btw, this component only renders once. :-)
+  };
+
   return (
     <>
       {props.map(({ x, y, rot, scale }, i) => (
         // @ts-ignore
         <animated.div className={styles.deck} key={i} style={{ x, y }}>
-          {/* This is the card itself, we're binding our gesture to it (and inject its index so we know which is which) */}
+          {/* Card */}
           {/* @ts-ignore */}
           <animated.div
-            {...bind(i)}
             style={{
               transform: interpolate([rot, scale], trans),
               padding: "14px",
             }}
+            onClick={() => flingCard(i)} // Fling the card on click
+            className="max-w-[150px] max-h-[200px] 2xl:max-w-[175px] 2xl:max-h-[230px]"
           >
             <div
               style={{

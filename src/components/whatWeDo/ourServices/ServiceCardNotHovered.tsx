@@ -10,7 +10,9 @@ const ServiceCardNotHovered = ({
       <div className="h-1/2 hidden lg:flex" />
       <div className="h-1/2 flex lg:flex-col justify-between items-center w-full">
         <h3 className="w-full text-center">Step {id}</h3>
-        <h3 className="w-full text-center text-xs">{title}</h3>
+        <h3 className="w-full text-center text-[0.5rem] 2xl:text-xs">
+          {title}
+        </h3>
       </div>
     </div>
   );
