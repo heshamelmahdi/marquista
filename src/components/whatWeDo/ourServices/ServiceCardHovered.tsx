@@ -16,7 +16,7 @@ const ServiceCardHovered = ({
   return (
     <div className="flex flex-col p-10 justify-between w-full h-full md:gap-3">
       <div className="hidden md:flex items-end gap-5">
-        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start  h-full w-fit">
+        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start font-normal h-full w-fit text-black">
           {description}
         </p>
         <GlareCard className="">
@@ -39,7 +39,7 @@ const ServiceCardHovered = ({
             height={1000}
           />
         </GlareCard>
-        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start  h-full w-fit">
+        <p className="lg:flex items-end text-xs lg:text-sm xl:text-base text-balance justify-start font-normal h-full w-fit text-black">
           {description}
         </p>
       </div>

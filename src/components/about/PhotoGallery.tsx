@@ -55,15 +55,15 @@ const PhotoGallery = () => {
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
         >
-          <IconArrowLeft className="h-5 w-5 text-white group-hover/button:rotate-12 transition-transform duration-300" />
+          <IconArrowLeft className="h-5 w-5 text-gray-700 group-hover/button:rotate-12 transition-transform duration-300" />
         </button>
         {[...Array(totalPages)].map((_, index) => (
           <button
             key={index}
             className={`hidden md:block px-4 py-2 rounded ${
               currentPage === index + 1
-                ? "bg-primary text-white"
-                : "bg-gray-200 text-gray-700"
+                ? "bg-gray-700 text-white"
+                : "bg-white text-gray-700"
             }`}
             onClick={() => handlePageChange(index + 1)}
           >
@@ -75,7 +75,7 @@ const PhotoGallery = () => {
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
         >
-          <IconArrowRight className="h-5 w-5 text-white group-hover/button:-rotate-12 transition-transform duration-300" />
+          <IconArrowRight className="h-5 w-5 text-gray-700 group-hover/button:-rotate-12 transition-transform duration-300" />
         </button>
       </div>
     </div>

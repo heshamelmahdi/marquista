@@ -58,7 +58,7 @@ export const mainTeamCopy = {
     },
     {
       quote:
-        "A seasoned videographer and the best DOP in the business, Omar has been crafting stunning visuals since 2018, lending his expertise to high-scale commercials and TV productions.",
+        "A seasoned videographer and the best DOP in the business, Marwan has been crafting stunning visuals since 2018, lending his expertise to high-scale commercials and TV productions.",
       name: "Marwan Nabil",
       designation: "Director of Photography",
       src: "https://storage.googleapis.com/bts-photos/marwan.png",
