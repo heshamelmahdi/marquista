@@ -25,8 +25,8 @@ const Footer = ({ className }: { className?: string }) => {
         <Image
           src="/logo.png"
           alt="Marquista Logo"
-          width={220}
-          height={44}
+          width={2843}
+          height={597}
           className="w-[220px] h-[44px]"
         />
       </div>

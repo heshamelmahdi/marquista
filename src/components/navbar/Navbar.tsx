@@ -32,9 +32,9 @@ const Navbar = () => {
           <Image
             src="/logo.png"
             alt="Marquista Logo"
-            width={220}
-            height={44}
-            className="object-cover w-[110px] h-[22px] max-w-[110px] max-h-[22px]"
+            width={2843}
+            height={597}
+            className="w-[110px] h-[22px] max-w-[110px] max-h-[22px]"
           />
         </TransitionLink>
 

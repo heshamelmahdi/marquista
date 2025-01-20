@@ -42,25 +42,25 @@ const PhotoGallery = () => {
         columns={(width) => {
           if (width < 500) return 2; // 1 column for small screens
           if (width < 900) return 3; // 2 columns for medium screens
-          if (width < 1200) return 4; // 3 columns for large screens
-          if (width < 1500) return 5; // 3 columns for large screens
-          return 6;
+          if (width < 1200) return 5; // 3 columns for large screens
+          if (width < 1500) return 7; // 3 columns for large screens
+          return 8;
         }}
       />
 
       {/* Pagination Controls */}
-      <div className="flex gap-2 mt-5">
+      <div className="flex gap-1 mt-5">
         <button
-          className="px-4 py-2 text-white bg-primary rounded disabled:opacity-50"
+          className="px-3 py-1 text-white bg-primary rounded disabled:opacity-50"
           disabled={currentPage === 1}
           onClick={() => handlePageChange(currentPage - 1)}
         >
-          <IconArrowLeft className="h-5 w-5 text-gray-700 group-hover/button:rotate-12 transition-transform duration-300" />
+          <IconArrowLeft className="h-4 w-4 text-gray-700 group-hover/button:rotate-12 transition-transform duration-300" />
         </button>
         {[...Array(totalPages)].map((_, index) => (
           <button
             key={index}
-            className={`hidden md:block px-4 py-2 rounded ${
+            className={`hidden md:block px-3 py-1 rounded ${
               currentPage === index + 1
                 ? "bg-gray-700 text-white"
                 : "bg-white text-gray-700"
@@ -71,11 +71,11 @@ const PhotoGallery = () => {
           </button>
         ))}
         <button
-          className="px-4 py-2 text-white bg-primary rounded disabled:opacity-50"
+          className="px-3 py-1 text-white bg-primary rounded disabled:opacity-50"
           disabled={currentPage === totalPages}
           onClick={() => handlePageChange(currentPage + 1)}
         >
-          <IconArrowRight className="h-5 w-5 text-gray-700 group-hover/button:-rotate-12 transition-transform duration-300" />
+          <IconArrowRight className="h-4 w-4 text-gray-700 group-hover/button:-rotate-12 transition-transform duration-300" />
         </button>
       </div>
     </div>
