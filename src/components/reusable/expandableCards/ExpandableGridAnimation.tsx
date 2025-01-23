@@ -1,10 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import ServiceCard from "./ServiceCard";
-import { ourServices } from "@/utils/copy/what-we-do";
+import ExpandableCard from "./ExpandableCard";
 
-const ServiceGridAnimation = () => {
+const ExpandableGridAnimation = ({
+  items,
+}: {
+  items: {
+    middleText: string;
+    title: string;
+    description: string;
+    image: string;
+    titleClassName?: string;
+  }[];
+}) => {
   const [expandedCard, setExpandedCard] = useState<number>(1);
 
   const handleHover = (index: number) => {
@@ -13,14 +22,14 @@ const ServiceGridAnimation = () => {
 
   return (
     <div className="flex flex-col lg:flex-row gap-2 w-full h-full">
-      {ourServices.map((service, index) => (
-        <ServiceCard
+      {items.map((service, index) => (
+        <ExpandableCard
           key={index}
           title={service.title}
           titleClassName={service.titleClassName}
           description={service.description}
           image={service.image}
-          id={service.id}
+          middleText={service.middleText}
           isExpanded={expandedCard === index}
           onHover={() => handleHover(index)}
         />
@@ -28,4 +37,4 @@ const ServiceGridAnimation = () => {
     </div>
   );
 };
-export default ServiceGridAnimation;
+export default ExpandableGridAnimation;

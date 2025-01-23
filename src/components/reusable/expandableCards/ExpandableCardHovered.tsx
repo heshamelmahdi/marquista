@@ -2,7 +2,7 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { GlareCard } from "@/components/ui/glare-card";
 
-const ServiceCardHovered = ({
+const ExpandableCardHovered = ({
   title,
   titleClassName,
   description,
@@ -56,4 +56,4 @@ const ServiceCardHovered = ({
     </div>
   );
 };
-export default ServiceCardHovered;
+export default ExpandableCardHovered;

@@ -81,7 +81,7 @@
 
 .mask {
   mask-image: url("../../public/mask.svg");
-  background: #00c2c2;
+  background: #ffffff;
   mask-repeat: no-repeat;
   mask-size: 40px;
   color: black;

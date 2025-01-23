@@ -2,15 +2,15 @@
 
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import ServiceCardHovered from "./ServiceCardHovered";
-import ServiceCardNotHovered from "./ServiceCardNotHovered";
+import ExpandableCardNotHovered from "./ExpandableCardNotHovered";
+import ExpandableCardHovered from "./ExpandableCardHovered";
 
-const ServiceCard = ({
+const ExpandableCard = ({
   title,
   titleClassName,
   description,
   image,
-  id,
+  middleText,
   isExpanded,
   onHover,
 }: {
@@ -18,7 +18,7 @@ const ServiceCard = ({
   titleClassName?: string;
   description: string;
   image: string;
-  id: number;
+  middleText: string;
   isExpanded: boolean;
   onHover: () => void;
 }) => {
@@ -36,16 +36,16 @@ const ServiceCard = ({
       )}
     >
       {isExpanded ? (
-        <ServiceCardHovered
+        <ExpandableCardHovered
           title={title}
           titleClassName={titleClassName}
           description={description}
           image={image}
         />
       ) : (
-        <ServiceCardNotHovered id={id} title={title} />
+        <ExpandableCardNotHovered middleText={middleText} title={title} />
       )}
     </motion.div>
   );
 };
-export default ServiceCard;
+export default ExpandableCard;

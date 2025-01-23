@@ -1,6 +1,6 @@
 import ContactUs from "@/components/ContactUs";
 import { MovieMagic } from "@/components/whatWeDo/MovieMagic";
-import OurServices from "@/components/whatWeDo/ourServices/OurServices";
+import OurServices from "@/components/whatWeDo/OurServices";
 import WhatWeDoHero from "@/components/whatWeDo/WhatWeDoHero";
 
 const WhatWeDo = () => {

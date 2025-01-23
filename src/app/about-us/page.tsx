@@ -1,8 +1,8 @@
-import AboutHero from "../../components/about/AboutHero";
-import { AboutTextSubHeadingAndBody } from "../../components/about/AboutText";
-import PhotoGallery from "../../components/about/PhotoGallery";
-import ContactUs from "../../components/ContactUs";
-import OurExpertise from "../../components/about/OurExpertise";
+import AboutHero from "@/components/about/AboutHero";
+import { AboutTextSubHeadingAndBody } from "@/components/about/AboutText";
+import OurExpertise from "@/components/about/OurExpertise";
+import PhotoGallery from "@/components/about/PhotoGallery";
+import ContactUs from "@/components/ContactUs";
 
 const AboutUs = () => {
   return (

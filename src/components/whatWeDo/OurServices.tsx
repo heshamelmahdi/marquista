@@ -1,6 +1,7 @@
 import { whatWeDoCopy } from "@/utils/copy/what-we-do";
-import SectionHeader from "../../reusable/SectionHeader";
-import ServiceGridAnimation from "./ServiceGridAnimation";
+import SectionHeader from "../reusable/SectionHeader";
+import ExpandableGridAnimation from "../reusable/expandableCards/ExpandableGridAnimation";
+import { ourServices } from "@/utils/copy/what-we-do";
 
 const OurServices = () => {
   return (
@@ -12,7 +13,7 @@ const OurServices = () => {
         />
       </div>
       <div className="col-span-2">
-        <ServiceGridAnimation />
+        <ExpandableGridAnimation items={ourServices} />
       </div>
     </div>
   );
