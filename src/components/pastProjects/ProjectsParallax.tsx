@@ -11,7 +11,6 @@ const ProjectsParallax = () => {
   const container = useRef(null);
 
   const { width, height } = useDimension();
-  console.log("width", width);
   const isMedium = width > 768;
   const isLarge = width > 1024;
   const isXLarge = width > 1440;
@@ -20,6 +19,10 @@ const ProjectsParallax = () => {
     target: container,
     offset: ["start end", "end start"],
   });
+  const { scrollYProgress: yProgress } = useScroll({
+    target: container,
+    offset: ["start start", "end end"],
+  });
 
   const [videos, setVideos] = useState<string[][]>([]);
   useEffect(() => {
@@ -27,7 +30,6 @@ const ProjectsParallax = () => {
       if (width < 768) {
         setVideos(generateVideoGroups(1, 12));
       } else {
-        console.log("Generating videos");
         setVideos(generateVideoGroups());
       }
     }
@@ -37,6 +39,9 @@ const ProjectsParallax = () => {
   const y2 = useTransform(scrollYProgress, [0, 1], [0, height * 3.3]);
   const y3 = useTransform(scrollYProgress, [0, 1], [0, height * 1.25]);
   const y4 = useTransform(scrollYProgress, [0, 1], [0, height * 3]);
+
+  // determine mask size based on scroll
+  const maskSize = useTransform(yProgress, [0, 1], [0, 300]);
 
   useEffect(() => {
     const lenis = new Lenis();
@@ -61,8 +66,8 @@ const ProjectsParallax = () => {
         {isLarge && <Column videos={videos[2]} y={y3} />}
         {isXLarge && <Column videos={videos[3]} y={y4} />}
       </div>
-      <div className="z-[200] md:fixed absolute inset-0 h-full w-full flex flex-col justify-center items-center">
-        <PastProjectsTitle />
+      <div className="z-[200] fixed inset-0 h-full w-full flex flex-col justify-center items-center">
+        <PastProjectsTitle width={width} height={height} maskSize={maskSize} />
       </div>
     </main>
   );
